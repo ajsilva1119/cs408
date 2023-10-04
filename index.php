@@ -26,7 +26,7 @@
     <nav>
     </nav>
     <div class="section-container">
-        <a href="pages\aboutme.php">
+        <a href="pages\comment.php">
             <section class="section">
                 <h2>About Me</h2>
         </a>

@@ -1,0 +1,97 @@
+/* comment page sheets */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a background color and default font to the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Style the header */
+header {
+    background-color: #0033A0;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style the navigation menu */
+nav {
+    background-color: #D64309;
+    padding: 10px;
+    text-align: right;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+* Create a container for the sections */
+.section-container {
+    display: flex; /* Use Flexbox to line up sections horizontally */
+    justify-content: space-between; /* Space them evenly */
+    max-width: 1200px; /* Optionally, set a max width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Style the section */
+.section {
+    position: relative; /* Allows positioning of child elements */
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Clear floats inside the section */
+}
+
+/* Style the "Like" button */
+.like-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: #0033A0;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style the "Reply" button */
+.reply-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #0033A0;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+.label {
+    color: white;
+    padding: 8px;
+  }
+
+/* Style the footer */
+footer {
+    background-color: #0033A0;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}

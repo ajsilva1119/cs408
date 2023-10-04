@@ -30,6 +30,13 @@
             <p>Likes 12 </p>
     </footer>
     <nav>
+        <label for="filter" class="label">Filter:</label>
+
+        <select name="filter" id="flter">
+        <option value="most">--</option>
+            <option value="most">Most Liked</option>
+            <option value="least">Least Liked</option>
+        </select>
     </nav>
     <div>
         <section class="section">
@@ -37,6 +44,8 @@
             <ul>
                 <p> I agree!</p>
             </ul>
+            <button class="like-button">Like</button>
+            <button class="reply-button">Reply</button>
         </section >
    
     </div>
