@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Disc Golf Fourms!</title>
-    <img src="Bronco.png" alt="logo" width="100" height="100">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheets\stylesheet1.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Mock-up Website</h1>
+        <img src="Bronco.png" alt="logo" width="100" height="100"><h1>Welcome to My Mock-up Website</h1>
     </header>
     <nav>
         <ul>
