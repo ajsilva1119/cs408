@@ -1,10 +1,10 @@
-https://disctalk408-60d24c8b200d.herokuapp.com/<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Mock-up Website</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet1.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Mock-up Website</title>
 </head>
 <body>
     <header>
