@@ -6,7 +6,7 @@
     <title>Welcome to Disc Golf Fourms!</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="../stylesheets\stylesheet1.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets\comments.css">
 </head>
 <body>
     <nav>
@@ -23,11 +23,12 @@
     </nav>
     <header class="style-header">
         <h1>About Me</h1>
-        <p> I really like disc golf </p> 
+        <p> I really like disc golf!</p> 
         
     </header>
     <footer>
             <p>Likes 12 </p>
+            
     </footer>
     <nav>
         <label for="filter" class="label">Filter:</label>
@@ -42,7 +43,7 @@
         <section class="section">
             <h2>Commet one</h2>
             <ul>
-                <p> I agree!</p>
+                <p> I agree!<i</p>
             </ul>
             <button class="like-button">Like</button>
             <button class="reply-button">Reply</button>
@@ -50,7 +51,7 @@
    
     </div>
     <footer>
-        &copy; 2023 My Mock-up Website
+        &copy; Hello to my first website!
     </footer>
 </body>
 </html>

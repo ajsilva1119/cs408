@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DiscTalk</title>
     <link rel="shortcut icon" href="Bronco.png">
-    <link rel="stylesheet" type="text/css" href="stylesheets\stylesheet1.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets\home.css">
 </head>
 <body>
     <nav>
@@ -48,7 +48,7 @@
         </section>
     </div>
     <footer>
-        &copy; 2023 My Mock-up Website
+        &copy; Hello to my first website!
     </footer>
 </body>
 </html>

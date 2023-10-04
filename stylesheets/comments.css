@@ -54,6 +54,7 @@ nav a {
     position: relative; /* Allows positioning of child elements */
     background-color: #f0f0f0;
     padding: 20px;
+    padding-bottom: 40px;
     margin: 10px;
     border: 1px solid #ccc;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
