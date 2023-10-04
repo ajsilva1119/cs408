@@ -1,9 +1,12 @@
-https://disctalk408-60d24c8b200d.herokuapp.com/<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Mock-up Website</title>
+    <title>Welcome to Disc Golf Fourms!</title>
+    <img src="Bronco.png" alt="logo" width="100" height="100">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheets\stylesheet1.css">
 </head>
 <body>
