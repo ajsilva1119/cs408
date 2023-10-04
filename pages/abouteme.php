@@ -26,27 +26,7 @@
     </header>
     <nav>
     </nav>
-    <div class="section-container">
-        <a href="pages\aboutme.php">
-            <section class="section">
-                <h2>About Me</h2>
-        </a>
-                <p>I really like disc golf</p>
-            </section>
-        <section class="section">
-            <h2>Top discs</h2>
-            <ul>
-                <li>Discmania DD1</li>
-                <li>Innova Beast</li>
-                <li>Prodigy Pa-3</li>
-                <p> These are my favorite discs I would reccommed to you!</p>
-            </ul>
-        </section >
-        <section class="section">
-            <h2>Newest disc!!</h2>
-            <p>This is my newest disc you look at it </p>
-            <img src="Disc.png" alt="logo" width="75" height="75" class="style-image"> 
-        </section>
+   
     </div>
     <footer>
         &copy; 2023 My Mock-up Website
