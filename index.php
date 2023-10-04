@@ -1,3 +1,3 @@
-<?="Hello PHP"?>
+<?="Hello Aslen you stink"?>
 
-<?="Hello PHP"?>
+<?="Hello"?>
