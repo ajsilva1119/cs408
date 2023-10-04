@@ -1,0 +1,3 @@
+<?="Hello PHP"?>
+
+<?="Hello PHP"?>
