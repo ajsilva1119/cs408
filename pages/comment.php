@@ -1,3 +1,18 @@
+<?php
+    session_start();
+    require_once '../Dao.php';
+    print_r($_SESSION);
+
+    // if(!isset($_SESSION['authenticated'])) {
+    //     header('Location: ../pages/login.php');
+    //     exit; 
+    //   }
+
+      if (isset($_SESSION["user_id"])) {
+        $dao = new dao();
+        $user = $dao->getUser($_SESSION["user_id"]);
+      }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +28,16 @@
         <ul>
             <img src="../Bronco.png" alt="logo" width="25" height="25" style="float:left">
             <form>
-                <li><a href="../index.php">Home</a></li> 
-                <li><a href="#">Search</a></li> 
+            <li><a href="#">Search</a></li> 
                 <input type="text" name="search"> <input type="submit" name="searchbutton">
-                <li><a href="#">Sign In</a></li>
-                <li><a href="#">Settings</a></li>
+                <li><a href="../index.php">Home</a></li> 
+                <li>
+                    <?php if (isset($user)) :?>
+                        <span style="color: white;"><?= $user["Username"] ?></span></li>
+                        <li><a href="../pages/logout">Logout</a></li>
+                    <?php else: ?>
+                        <a href="../pages/login.php">Sign In</a></li>
+                    <?php endif; ?>
             </form>
         </ul>
     </nav>

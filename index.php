@@ -1,3 +1,18 @@
+<?php
+    session_start();
+    require_once 'Dao.php';
+    print_r($_SESSION);
+
+    // if(!isset($_SESSION['authenticated'])) {
+    //     header('Location: ../pages/login.php');
+    //     exit; 
+    //   }
+
+      if (isset($_SESSION["user_id"])) {
+        $dao = new dao();
+        $user = $dao->getUser($_SESSION["user_id"]);
+      }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +29,13 @@
             <form>
                 <li><a href="#">Search</a></li> 
                 <input type="text" name="search"> <input type="submit" name="searchbutton">
-                <li><a href="#">Sign In</a></li>
-                <li><a href="#">Settings</a></li>
+                <li>
+                    <?php if (isset($user)) :?>
+                        <span style="color: white;"><?= $user["Username"] ?></span></li>
+                        <li><a href="../pages/logout">Logout</a></li>
+                    <?php else: ?>
+                        <a href="pages\login.php">Sign In</a></li>
+                    <?php endif; ?>
             </form>
         </ul>
     </nav>
@@ -24,6 +44,11 @@
         <img src="Bronco.png" alt="logo" width="100" height="100" class="style-image"> 
     </header>
     <nav>
+        <li>
+            <?php if (isset($user)) :?>
+                <button> Post </button>
+            <?php else: ?>
+            <?php endif; ?>
     </nav>
     <div class="section-container">
         <a href="pages\comment.php">
@@ -35,7 +60,7 @@
         <section class="section">
             <h2>Top discs</h2>
             <ul>
-                <li>Discmania DD1</li>
+                <li>Discmania</li>
                 <li>Innova Beast</li>
                 <li>Prodigy Pa-3</li>
                 <p> These are my favorite discs I would reccommed to you!</p>

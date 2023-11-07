@@ -15,8 +15,9 @@ header {
     background-color: #0033A0;
     color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
 }
+
 
 /* Style the navigation menu */
 nav {
@@ -65,4 +66,78 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px;
+}
+
+.section-containerlogin {
+    display: flex; /* Use Flexbox to line up sections horizontally */
+    justify-content: space-between; /* Space them evenly */
+    max-width: 1200px; /* Optionally, set a max width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Adjust as needed to center vertically */
+}
+
+/* Style the login box */
+.login-box {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 300px; /* Adjust width as needed */
+}
+
+/* Style the login form elements */
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form input[type="submit"] {
+    display: block; /* Stack elements on top of each other */
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+.create-user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Adjust as needed to center vertically */
+}
+
+/* Style the create user box */
+.create-user-box {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 300px; /* Adjust width as needed */
+}
+
+/* Style the create user form elements */
+.create-user-form input[type="email"],
+.create-user-form input[type="text"],
+.create-user-form input[type="password"],
+.create-user-form input[type="submit"] {
+    display: block; /* Stack elements on top of each other */
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.create-user-form input[type="submit"] {
+    background-color: #0033A0;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+button{
+    background-color: #0033A0;
 }
