@@ -12,8 +12,7 @@
         <ul>
             
             <form>
-                <li><a href="../index.php">Home</a></li> 
-                <li><a href="#">Settings</a></li>
+                <li><a href="../index.php">Home</a></li>
             </form>
         </ul>
     </nav>
