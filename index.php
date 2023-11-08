@@ -46,7 +46,7 @@
     <nav>
         <li>
             <?php if (isset($user)) :?>
-                <button> Post </button>
+                <a href="post.php"><button> Post </button></a>
             <?php else: ?>
             <?php endif; ?>
     </nav>
