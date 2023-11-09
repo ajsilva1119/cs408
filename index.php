@@ -81,6 +81,7 @@
                 <h2><?= $mostRecentPost['Title'] ?></h2> </a>
                 <p><?= $mostRecentPost['Content'] ?></p>
                 <p>Posted by: <?= $mostRecentUsername['Username'] ?></p>
+                <p><?= $mostRecentPost['CreatedAt'] ?></p>
             <?php else: ?>
                 <p>No posts available</p>
             <?php endif; ?>

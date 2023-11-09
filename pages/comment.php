@@ -1,7 +1,6 @@
 <?php
     session_start();
     require_once '../Dao.php';
-    print_r($_SESSION);
 
     // Store the current URL in a session variable
     $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
@@ -32,6 +31,8 @@
         // Handle the case when post_id is not set
         echo "Debug: post_id is not set in the URL";
     }
+
+    $replies = $dao->getRepliesByPostId($post_id);
     
 ?>
     
@@ -78,10 +79,6 @@
             }
         ?>
     </header>
-    <footer>
-            <p>Likes 12 </p>
-            
-    </footer>
     <nav>
         <?php if (isset($user)) :?>
             <button id="toggleReplyForm" >Reply</button>
@@ -98,7 +95,7 @@
     </nav>
     <div>
         <section class="section">
-            <form id="replyForm" class="reply-form" method="post" action="../handlers/reply-handler.php">
+            <form id="replyForm" class="reply-form" method="post" action="../handlers/reply-handler.php" style="display: none;">
                 <input type="hidden" name="post_id" value="<?= $post_id ?>">
                 
                 <div style="text-align: center; margin: 15px;">
@@ -111,16 +108,21 @@
             </form>
         </section>
     </div>
-    <div>
-        <section class="section">
-            <h2>Commet one</h2>
-            <ul>
-                <p> I agree!<i</p>
-            </ul>
-            <button class="like-button">Like</button>
-        </section >
-   
-    </div>
+    <?php if (is_array($replies)) : ?>
+        <?php foreach ($replies as $reply): ?>
+            <div>
+                <section class="section">
+                    <h2>Reply</h2></Br>
+                    <p><?= $reply['Content'] ?></p></Br>
+                    <p>Posted by User ID: <?= $reply['Username'] ?></p>
+                    <!-- Add more details or formatting as needed -->
+                </section>
+            </div>
+        <?php endforeach; ?>
+        <?php else: ?>
+            <p>No replies available</p>
+        <?php endif; ?>
+    
     <footer>
         &copy; Hello to my first website!
     </footer>

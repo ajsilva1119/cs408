@@ -1,7 +1,6 @@
 <?php
     session_start();
     require_once '../Dao.php';
-    print_r($_SESSION);
 
     // if(!isset($_SESSION['authenticated'])) {
     //     header('Location: ../pages/login.php');

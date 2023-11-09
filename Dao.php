@@ -98,26 +98,65 @@ class Dao {
     }
 
     return null;
-}
+  }
 
-public function getPostById($postid){
-  $conn = $this->getConnection();
-      $saveQuery =
-          sprintf("SELECT * FROM posts
-          WHERE PostID = :postid");
-      $q = $conn->prepare($saveQuery);
-      $q->bindParam(":postid", $postid);
-      $q->execute();
-      $post = $q->fetch(PDO::FETCH_ASSOC);
+  public function getPostById($postid){
+    $conn = $this->getConnection();
+        $saveQuery =
+            sprintf("SELECT * FROM posts
+            WHERE PostID = :postid");
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":postid", $postid);
+        $q->execute();
+        $post = $q->fetch(PDO::FETCH_ASSOC);
 
-      if($post){
-        return $post;
-      }
-      else {
-        return FALSE;
-      }
-    return FALSE;
-}
+        if($post){
+          return $post;
+        }
+        else {
+          return FALSE;
+        }
+      return FALSE;
+  }
+
+//Replys
+
+  public function addReply($postid, $userid, $content) {
+    // try {
+        // Prepare the SQL statement
+        $conn = $this->getConnection();
+        $saveQuery ="INSERT INTO Replies (PostID, UserID, Content) VALUES (:postid, :userid, :content)";
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":postid", $postid);
+        $q->bindParam(":userid", $userid);
+        $q->bindParam(":content", $content);
+        $q->execute();
+
+        // Check if the insertion was successful
+        if ($q->rowCount() > 0) {
+            return true; // Reply added successfully
+
+        } else {
+            return false; // Failed to add reply
+        }
+    // } catch (PDOException $e) {
+    //     // Handle database errors
+    //     echo "Error: " . $e->getMessage();
+    //     return false;
+    // }
+  }
+  public function getRepliesByPostId($postid) {
+    $conn = $this->getConnection();
+    $query = "SELECT r.*, u.Username 
+              FROM Replies r 
+              JOIN Users u ON r.UserID = u.UserID 
+              WHERE r.PostID = :postid";
+    $q = $conn->prepare($query);
+    $q->bindParam(":postid", $postid);
+    $q->execute();
+
+    return $q->fetchAll(PDO::FETCH_ASSOC);
+  }
 }
 
 //
