@@ -75,14 +75,8 @@ nav a {
 
 /* Style the "Reply" button */
 .reply-button {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
     background-color: #0033A0;
     color: #fff;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
 }
 .label {
     color: white;
@@ -95,4 +89,8 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px;
+}
+button {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
 }

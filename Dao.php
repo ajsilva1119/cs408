@@ -77,8 +77,47 @@ class Dao {
         }
 
      }
+
+     public function addPost($userId, $title, $content) {
+      $conn = $this->getConnection();
+      $saveQuery = "INSERT INTO Posts (UserID, Title, Content) VALUES (:userId, :title, :content)";
+      $q = $conn->prepare($saveQuery);
+      $q->bindParam(":userId", $userId);
+      $q->bindParam(":title", $title);
+      $q->bindParam(":content", $content);
+      $q->execute();
+  }
   
-  
+  public function getMostRecentPost() {
+    $conn = $this->getConnection();
+    $query = "SELECT * FROM Posts ORDER BY CreatedAt DESC LIMIT 1";
+    $result = $conn->query($query);
+
+    if ($result && $result->rowCount() > 0) {
+        return $result->fetch(PDO::FETCH_ASSOC);
+    }
+
+    return null;
+}
+
+public function getPostById($postid){
+  $conn = $this->getConnection();
+      $saveQuery =
+          sprintf("SELECT * FROM posts
+          WHERE PostID = :postid");
+      $q = $conn->prepare($saveQuery);
+      $q->bindParam(":postid", $postid);
+      $q->execute();
+      $post = $q->fetch(PDO::FETCH_ASSOC);
+
+      if($post){
+        return $post;
+      }
+      else {
+        return FALSE;
+      }
+    return FALSE;
+}
 }
 
 //
