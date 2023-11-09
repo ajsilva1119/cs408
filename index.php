@@ -1,7 +1,6 @@
 <?php
     session_start();
     require_once 'Dao.php';
-    print_r($_SESSION);
 
     // Store the current URL in a session variable
     $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
