@@ -18,23 +18,17 @@
     if (isset($_GET['post_id'])) {
         $post_id = $_GET['post_id'];
 
-        echo "Debug: post_id = " . $post_id;
-
         $dao = new Dao();
 
         // Fetch post details based on post_id
         $post = $dao->getPostById($post_id);
 
-        echo "Debug: post_id after fetch = " . $post_id;
-        echo "Debug: post after fetch = " . print_r($post, true);
     } else {
         // Handle the case when post_id is not set
-        echo "Debug: post_id is not set in the URL";
     }
 
     $replies = $dao->getRepliesByPostId($post_id);
-    
-?>
+
     
 ?>
 <!DOCTYPE html>
