@@ -34,7 +34,7 @@
                 <li>
                     <?php if (isset($user)) :?>
                         <span style="color: white;"><?= $user["Username"] ?></span></li>
-                        <li><a href="../pages/logout">Logout</a></li>
+                        <li><a href="../pages/logout.php">Logout</a></li>
                     <?php else: ?>
                         <a href="../pages/login.php">Sign In</a></li>
                     <?php endif; ?>

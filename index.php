@@ -32,9 +32,9 @@
                 <li>
                     <?php if (isset($user)) :?>
                         <span style="color: white;"><?= $user["Username"] ?></span></li>
-                        <li><a href="../pages/logout">Logout</a></li>
+                        <li><a href="../pages/logout.php">Logout</a></li>
                     <?php else: ?>
-                        <a href="pages\login.php">Sign In</a></li>
+                        <a href="../pages\login.php">Sign In</a></li>
                     <?php endif; ?>
             </form>
         </ul>
@@ -46,7 +46,7 @@
     <nav>
         <li>
             <?php if (isset($user)) :?>
-                <a href="post.php"><button> Post </button></a>
+                <a href="../pages/createPost.php"><button> Post </button></a>
             <?php else: ?>
             <?php endif; ?>
     </nav>
