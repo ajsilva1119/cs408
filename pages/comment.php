@@ -43,13 +43,7 @@
 </head>
 <body>
     <nav>
-        <ul>
-            <img src="../Bronco.png" alt="logo" width="25" height="25" style="float:left">
-            <form>
-            <li><a href="#">Search</a></li> 
-                <input type="text" name="search"> <input type="submit" name="searchbutton">
-                <li><a href="../index.php">Home</a></li> 
-                <li>
+                 <li>
                     <?php if (isset($user)) :?>
                         <span style="color: white;"><?= $user["Username"] ?></span></li>
                         <li><a href="#">My Posts</a></li>
@@ -87,9 +81,10 @@
             <option value="least">Least Liked</option>
         </select> -->
     </nav>
-    <div>
-        <section class="section">
-            <form id="replyForm" class="reply-form" method="post" action="../handlers/reply-handler.php" style="display: none;">
+    
+    <section class="section">
+        <form  class="reply-form" data-comment-id="<?= $post_id ?>" method="post" action="../handlers/reply-handler.php" style="display: none;">
+            
                 <input type="hidden" name="post_id" value="<?= $post_id ?>">
                 
                 <div style="text-align: center; margin: 15px;">
@@ -99,10 +94,13 @@
                 </div>
 
                 <input type="submit" value="Send">
-            </form>
-        </section>
-    </div>
+            
+        </form>
+    </section>
+    
+    <!-- REPLIES_SECTION_START -->
     <?php if (is_array($replies)) : ?>
+        <div id="repliesContainer"> 
         <?php foreach ($replies as $reply): ?>
             <div>
                 <section class="section">
@@ -113,19 +111,65 @@
                 </section>
             </div>
         <?php endforeach; ?>
+        </div>
         <?php else: ?>
             <p>No replies available</p>
         <?php endif; ?>
-    
+    <!-- REPLIES_SECTION_END -->
+
     <footer>
         &copy; Hello to my first website!
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
-        // JavaScript to toggle the visibility of the reply form
-        document.getElementById('toggleReplyForm').addEventListener('click', function() {
-            var replyForm = document.getElementById('replyForm');
-            replyForm.style.display = (replyForm.style.display === 'none' || replyForm.style.display === '') ? 'block' : 'none';
+        $(document).ready(function () {
+            // Function to toggle the visibility of the reply form
+            $('#toggleReplyForm').click(function () {
+                $('.reply-form').toggle();
+            });
+
+            // Function to handle form submissions using AJAX
+            $('.reply-form').submit(function (e) {
+                e.preventDefault(); // Prevent the default form submission
+
+                // Serialize form data
+                var formData = $(this).serialize();
+
+                // Perform AJAX call
+                $.ajax({
+                    type: 'POST',
+                    url: '../handlers/reply-handler.php',
+                    data: formData,
+                    dataType: 'json', // Specify that the expected response is JSON
+                    success: function (response) {
+                        // Handle the success response
+                        console.log('Reply submitted successfully');
+                        console.log(response);
+
+                        if (response.success) {
+                            // Update the replies section with the new HTML
+                            $('#repliesContainer').html(response.replies);
+
+                            $('.reply-form').toggle();
+                            $('#reply_content').val('');
+                        } else {
+                            console.error('Failed to add reply. Error message: ' + response.message);
+                        }
+                    },
+                    error: function (error) {
+                        // Handle errors if any
+                        console.error('Error submitting reply');
+                        console.error(error);
+                    }
+                });
+            });
         });
     </script>
 </body>
-</html>
+</html>  <ul>
+            <img src="../Bronco.png" alt="logo" width="25" height="25" style="float:left">
+            <form>
+            <li><a href="#">Search</a></li> 
+                <input type="text" name="search"> <input type="submit" name="searchbutton">
+                <li><a href="../index.php">Home</a></li> 
+     
